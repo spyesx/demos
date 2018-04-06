@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<script>
+			function onImportLoad(e) {
+				console.log('Loaded import: ' + e.target.href);
+			}
+			function onImportError(e) {
+				console.log('Error loading import: ' + e.target.href);
+			}
+		</script>
+		<link rel="import" href="component_helloWorld.html" onload="onImportLoad(event)" onerror="onImportError(event)">
+	</head>
+	<body>
+		<script>
+			var link = document.querySelector('link[rel="import"]');
+			var content = link.import;
+			var el = content.querySelector('.component_helloWorld');
+			document.body.appendChild(el.cloneNode(true));
+		</script>
+	</body>
+ </html>
