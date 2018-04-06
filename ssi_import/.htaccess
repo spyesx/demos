@@ -1,0 +1,7 @@
+#Don't forget to load mod_include (http://httpd.apache.org/docs/current/mod/mod_include.html)
+
+AddType text/html .shtml
+AddHandler server-parsed .shtml
+Options Indexes FollowSymLinks Includes
+AddOutputFilter INCLUDES .shtml
+AddHandler server-parsed .html
